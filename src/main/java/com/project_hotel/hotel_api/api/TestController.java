@@ -10,3 +10,8 @@ public class TestController {
         return "Hotel API is working 🚀";
     }
 }
+
+//  In Spring Boot,
+//  a REST API Controller is a class
+//  that handles HTTP requests (like GET, POST, PUT, DELETE) and
+//  sends back HTTP responses.
