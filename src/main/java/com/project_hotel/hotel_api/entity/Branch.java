@@ -3,6 +3,8 @@ package com.project_hotel.hotel_api.entity;
 import com.project_hotel.hotel_api.enums.BranchType;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "branch")
 public class Branch {
@@ -20,4 +22,15 @@ public class Branch {
 
     @Column(name = "branch_name", nullable = false)
     private String branchName;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "hotel_id", nullable = false)
+    private Hotel hotel;
+
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    private Address address;
+
+    @OneToMany(mappedBy = "branch")
+    private List<Room> rooms;
+
 }

@@ -1,9 +1,8 @@
 package com.project_hotel.hotel_api.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name= "room")
@@ -27,4 +26,14 @@ public class Room {
 
     @Column(name = "is_available", nullable = false)
     private boolean isAvailable;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "branch_id")
+    private Branch branch;
+
+    @OneToMany(mappedBy = "room",fetch = FetchType.LAZY)
+    private List<Facilities> facilities;
+
+    @OneToMany(mappedBy = "room")
+    private List<RoomImages> roomImages;
 }
