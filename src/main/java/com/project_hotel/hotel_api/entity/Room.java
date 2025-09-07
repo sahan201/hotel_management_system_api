@@ -27,11 +27,11 @@ public class Room {
     @Column(name = "is_available", nullable = false)
     private boolean isAvailable;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "branch_id")
     private Branch branch;
 
-    @OneToMany(mappedBy = "room",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "room")
     private List<Facilities> facilities;
 
     @OneToMany(mappedBy = "room")

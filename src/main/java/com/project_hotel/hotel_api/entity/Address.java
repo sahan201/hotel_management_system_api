@@ -24,7 +24,7 @@ public class Address {
     @Column(name = "longitude", nullable = false, precision = 8, scale = 2)
     private BigDecimal longitude;
 
-    @Column(name = "lattitude", nullable = false, precision = 8, scale = 2)
+    @Column(name = "latitude", nullable = false, precision = 8, scale = 2)
     private BigDecimal latitude;
 
     @OneToOne

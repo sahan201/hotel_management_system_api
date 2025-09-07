@@ -23,11 +23,11 @@ public class Branch {
     @Column(name = "branch_name", nullable = false)
     private String branchName;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne()
     @JoinColumn(name = "hotel_id", nullable = false)
     private Hotel hotel;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne()
     private Address address;
 
     @OneToMany(mappedBy = "branch")

@@ -13,7 +13,7 @@ public class RoomImages {
     @Embedded
     private FileFormatter fileFormatter;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "room_id")
     private Room room;
 }
