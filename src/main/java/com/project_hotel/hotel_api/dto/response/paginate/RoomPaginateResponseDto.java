@@ -14,5 +14,4 @@ import java.util.List;
 public class RoomPaginateResponseDto {
     private long dataCount;
     private List<ResponseRoomDto> dataList;
-
 }
