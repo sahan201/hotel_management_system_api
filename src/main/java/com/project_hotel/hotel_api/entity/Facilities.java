@@ -9,7 +9,7 @@ public class Facilities {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
     @Column(name = "id", nullable = false, updatable = false)
-    private Long id;
+    private long id;
 
     @Column(name = "name", nullable = false)
     private String name;

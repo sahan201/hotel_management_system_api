@@ -10,7 +10,7 @@ public class Address {
 
     @Id
     @Column(name = "address_id", nullable = false)
-    private Long addressId;
+    private String addressId;
 
     @Column(name = "address", nullable = false, length = 255)
     private String address;

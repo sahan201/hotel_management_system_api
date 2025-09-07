@@ -2,11 +2,17 @@ package com.project_hotel.hotel_api.entity;
 
 import com.project_hotel.hotel_api.enums.BranchType;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "branch")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Branch {
 
     @Id
@@ -23,11 +29,11 @@ public class Branch {
     @Column(name = "branch_name", nullable = false)
     private String branchName;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id", nullable = false)
     private Hotel hotel;
 
-    @OneToOne()
+    @OneToOne(mappedBy = "branch")
     private Address address;
 
     @OneToMany(mappedBy = "branch")

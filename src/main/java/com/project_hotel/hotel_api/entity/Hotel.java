@@ -1,6 +1,7 @@
 package com.project_hotel.hotel_api.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.sql.Blob;
@@ -9,6 +10,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "hotel")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Hotel {
 
     @Id
@@ -21,8 +27,8 @@ public class Hotel {
     @Column(name = "star_rating", nullable = false)
     private int starRating;
 
-    @Column(name = "description")
-    @Lob
+    @Lob  // Large object
+    @Column(name = "description" , nullable =false )
     private Blob description;
     // Lob => long object
     // Blob =>  can store multi media files.

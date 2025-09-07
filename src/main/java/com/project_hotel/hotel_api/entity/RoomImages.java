@@ -8,7 +8,7 @@ public class RoomImages {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
-    private Long id;
+    private long id;
 
     @Embedded
     private FileFormatter fileFormatter;

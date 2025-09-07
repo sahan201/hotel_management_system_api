@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class RequestRoomDto {
-    private BigDecimal price;
+    private int price;
     private String roomNumber;
-    private String image;
     private int bedCount;
     private boolean isAvailable;
     private String roomType;
+    private String branchId;
 }

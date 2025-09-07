@@ -12,6 +12,4 @@ import java.util.List;
 public class HotelPaginateRequestDto {
     private List<ResponseHotelDto> dataList;
     private long dataCount;
-    private int page;
-    private int pageSize;
 }
