@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 //This tells Spring Boot that this class will globally catch exceptions thrown by any @RestController in your app.
 //Instead of writing try-catch in every controller, you define all your error handling here.
 public class AppWideExceptionHandler {
+
+
     @ExceptionHandler(EntryNotFoundException.class)
     public ResponseEntity<StandardResponseDto> handleEntryNotFoundException(EntryNotFoundException ex) {
         //Returns a ResponseEntity<StandardResponseDto> → which means an HTTP response with a body.
@@ -21,9 +23,10 @@ public class AppWideExceptionHandler {
         );
     }
 
+
     //generic exception handler
     @ExceptionHandler(GenericException.class)
-    public ResponseEntity<StandardResponseDto> handleGenericException(Exception ex){
+    public ResponseEntity<StandardResponseDto> handleGenericException(GenericException ex){
         return new ResponseEntity<>(
             new StandardResponseDto(ex.getMessage(), ex, 500),
             HttpStatus.INTERNAL_SERVER_ERROR
