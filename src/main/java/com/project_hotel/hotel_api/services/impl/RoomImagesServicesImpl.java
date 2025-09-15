@@ -2,7 +2,7 @@ package com.project_hotel.hotel_api.services.impl;
 
 import com.project_hotel.hotel_api.dto.request.RequestRoomImagesDto;
 import com.project_hotel.hotel_api.dto.response.ResponseRoomImagesDto;
-import com.project_hotel.hotel_api.dto.response.paginate.RoomImagesPaginateDto;
+import com.project_hotel.hotel_api.dto.response.paginate.RoomImagesPaginateResponseDto;
 import com.project_hotel.hotel_api.services.RoomImagesServices;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +29,7 @@ public class RoomImagesServicesImpl implements RoomImagesServices {
     }
 
     @Override
-    public RoomImagesPaginateDto findAll(int page, int size, String roomId) {
+    public RoomImagesPaginateResponseDto findAll(int page, int size, String roomId) {
         return null;
     }
 }

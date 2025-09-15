@@ -1,6 +1,6 @@
 package com.project_hotel.hotel_api.dto.response.paginate;
 
-import com.project_hotel.hotel_api.dto.response.ResponseRoomImagesDto;
+import com.project_hotel.hotel_api.dto.response.ResponseFacilitiesDto;
 import lombok.*;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RoomImagesPaginateDto {
+public class FacilitiesPaginateResponseDto {
     private long dataCount;
-    private List<ResponseRoomImagesDto> dataList;
+    private List<ResponseFacilitiesDto>  dataList;
 }

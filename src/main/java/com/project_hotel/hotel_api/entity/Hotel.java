@@ -20,6 +20,7 @@ public class Hotel {
     @Id
     @Column(name = "hotel_id", nullable = false, unique = true, length = 255)
     private String hotelId;
+    // hotelId is a variable in Hotel class. (hotelId = instance)
 
     @Column(name = "hotel_name", nullable = false, length = 255)
     private String hotelName;

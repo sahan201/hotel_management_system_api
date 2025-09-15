@@ -1,15 +1,16 @@
 package com.project_hotel.hotel_api.services;
 
+import com.project_hotel.hotel_api.dto.request.RequestHotelDto;
 import com.project_hotel.hotel_api.dto.response.ResponseHotelDto;
-import com.project_hotel.hotel_api.dto.response.paginate.HotelPaginateRequestDto;
+import com.project_hotel.hotel_api.dto.response.paginate.HotelPaginateResponseDto;
 
 import java.sql.SQLException;
 
 public interface HotelService {
-    public void create(ResponseHotelDto Dto);
-    public void update(ResponseHotelDto Dto, String hotelId) throws SQLException;
+    public void create(RequestHotelDto Dto);
+    public void update(RequestHotelDto Dto, String hotelId) throws SQLException;
     public void delete(String hotelId);
     public ResponseHotelDto findById(String hotelId) throws SQLException;
-    public HotelPaginateRequestDto findAll(int page, int size, String searchText) throws SQLException;
+    public HotelPaginateResponseDto findAll(int page, int size, String searchText) throws SQLException;
 
 }
