@@ -65,14 +65,15 @@ public class HotelServiceImpl implements HotelService {
         return HotelPaginateResponseDto.builder()
                 .dataCount(hotelRepo.countAllHotels(searchText))
                 .dataList(
-                        hotelRepo.searchAllHotels(searchText, PageRequest.of(page, size))
-                                .stream().map(e-> {
+                        hotelRepo.searchAllHotels(searchText, PageRequest.of(page, size))//creates a Pageable object for pagination.
+                                .stream().map(e-> {  //creates an iterable flow. that's mean return its elements one at a time and then map.
                                     try{
                                         return toResponseHotelDto(e);
                                     }catch (SQLException ex){
                                         throw new RuntimeException(ex);
                                     }
                                 }).collect(Collectors.toList())
+                                //Collects all converted ResponseHotelDto objects into a List<ResponseHotelDto>.
                 )
                 .build();
     }
