@@ -7,10 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface HotelRepo extends JpaRepository<Hotel, String> {
-    @Query(value = "SELECT * FROM hotel WHERE hotel_name LIKE %?1% AND active_status=true ", nativeQuery = true)
+    @Query(value = "SELECT * FROM hotel WHERE hotel_name LIKE CONCAT('%', ?1, '%') AND active_status=true ", nativeQuery = true)
     public Page<Hotel> searchAllHotels(String searchText, Pageable pageable);
 
-    @Query(value = "SELECT COUNT(*) FROM hotel WHERE hotel_name LIKE %?1% AND active_status=true ", nativeQuery = true)
+    @Query(value = "SELECT COUNT(*) FROM hotel WHERE hotel_name LIKE CONCAT('%', ?1, '%') AND active_status=true ", nativeQuery = true)
     public long countAllHotels(String searchText);
 
 }
