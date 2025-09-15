@@ -11,7 +11,6 @@ import com.project_hotel.hotel_api.repo.HotelRepo;
 import com.project_hotel.hotel_api.services.HotelService;
 import com.project_hotel.hotel_api.utils.ByteCodeHandler;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.query.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -79,9 +78,9 @@ public class HotelServiceImpl implements HotelService {
     }
 
 
-    //map
+    //mapping
 
-    private Hotel toHotel(RequestHotelDto Dto)throws SQLException{
+    private Hotel toHotel(RequestHotelDto Dto)throws SQLException{  // Dto => Hotel
         //Dto is an object that created from RequestHotelDto class.
         //Hotel is a class type and toHotel is the name of the function
         return Dto == null?null:
@@ -98,13 +97,14 @@ public class HotelServiceImpl implements HotelService {
     }
 
     private ResponseHotelDto toResponseHotelDto(Hotel hotel)throws SQLException{
+        //database eke data response Dto ekak widihata convert krnwa 
         //Hotel = class, hotel = object
         return hotel == null?null:
                 ResponseHotelDto.builder()
 
                         .hotelId(hotel.getHotelId())
                         .hotelName(hotel.getHotelName())
-                        .activeStatus(true)
+                        .activeStatus(hotel.isActiveStatus())
                         .startingFrom(hotel.getStartingFrom())
                         .updatedAt(LocalDateTime.now())
                         .createdAt(LocalDateTime.now())
